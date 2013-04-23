@@ -9,12 +9,12 @@ using PryorCalendarLogin.Models;
 
 namespace PryorCalendarLogin.Controllers
 {
-    public class CalEventsController : Controller
+    public class CalEventController : Controller
     {
         private CalendarDBEntities db = new CalendarDBEntities();
 
         //
-        // GET: /CalEvents/
+        // GET: /CalEvent/
 
         public ActionResult Index()
         {
@@ -23,9 +23,9 @@ namespace PryorCalendarLogin.Controllers
         }
 
         //
-        // GET: /CalEvents/Details/5
+        // GET: /CalEvent/Details/5
 
-        public ActionResult Details(Guid id)
+        public ActionResult Details(Guid id = null)
         {
             Cal_Event cal_event = db.Cal_Event.Find(id);
             if (cal_event == null)
@@ -36,7 +36,7 @@ namespace PryorCalendarLogin.Controllers
         }
 
         //
-        // GET: /CalEvents/Create
+        // GET: /CalEvent/Create
 
         public ActionResult Create()
         {
@@ -45,7 +45,7 @@ namespace PryorCalendarLogin.Controllers
         }
 
         //
-        // POST: /CalEvents/Create
+        // POST: /CalEvent/Create
 
         [HttpPost]
         public ActionResult Create(Cal_Event cal_event)
@@ -63,9 +63,9 @@ namespace PryorCalendarLogin.Controllers
         }
 
         //
-        // GET: /CalEvents/Edit/5
+        // GET: /CalEvent/Edit/5
 
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(Guid id = null)
         {
             Cal_Event cal_event = db.Cal_Event.Find(id);
             if (cal_event == null)
@@ -77,7 +77,7 @@ namespace PryorCalendarLogin.Controllers
         }
 
         //
-        // POST: /CalEvents/Edit/5
+        // POST: /CalEvent/Edit/5
 
         [HttpPost]
         public ActionResult Edit(Cal_Event cal_event)
@@ -93,9 +93,9 @@ namespace PryorCalendarLogin.Controllers
         }
 
         //
-        // GET: /CalEvents/Delete/5
+        // GET: /CalEvent/Delete/5
 
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(Guid id = null)
         {
             Cal_Event cal_event = db.Cal_Event.Find(id);
             if (cal_event == null)
@@ -106,7 +106,7 @@ namespace PryorCalendarLogin.Controllers
         }
 
         //
-        // POST: /CalEvents/Delete/5
+        // POST: /CalEvent/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(Guid id)

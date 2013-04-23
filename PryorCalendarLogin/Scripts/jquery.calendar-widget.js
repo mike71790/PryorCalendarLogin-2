@@ -61,7 +61,7 @@
 			var prev_days = getDaysInMonth(prev_m, prev_y);
 			firstDay = (firstDay == 0 && firstDayDate) ? 7 : firstDay;
             
-			var eventURL = "http://localhost:5092/Event";
+			var eventURL = "http://localhost:5092/CalEvents";
 	
 			var i = 0;
             for (j=0;j<42;j++){

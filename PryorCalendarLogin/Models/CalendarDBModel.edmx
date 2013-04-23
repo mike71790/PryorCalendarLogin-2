@@ -37,6 +37,7 @@
           <Property Name="User_ID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Time" Type="time" />
           <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="Event_Name" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -155,6 +156,7 @@
           <Property Name="Time" Type="Time" Precision="7" />
           <NavigationProperty Name="User" Relationship="CalendarDBModel.FK_Cal_Event_User" FromRole="Cal_Event" ToRole="User" />
           <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Event_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -227,6 +229,7 @@
           <EntitySetMapping Name="Cal_Event">
             <EntityTypeMapping TypeName="CalendarDBModel.Cal_Event">
               <MappingFragment StoreEntitySet="Cal_Event">
+                <ScalarProperty Name="Event_Name" ColumnName="Event_Name" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="Event_ID" ColumnName="Event_ID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />

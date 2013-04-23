@@ -15,11 +15,11 @@ namespace PryorCalendarLogin.Models
     public partial class Cal_Event
     {
         public System.Guid Event_ID { get; set; }
+        public string Event_Name { get; set; }
         public System.DateTime Date { get; set; }
         public System.Guid User_ID { get; set; }
         public Nullable<System.TimeSpan> Time { get; set; }
         public string Comment { get; set; }
-    
         public virtual User User { get; set; }
     }
 }
